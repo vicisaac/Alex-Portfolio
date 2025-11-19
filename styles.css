@@ -1,0 +1,289 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px for easier scaling */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 1rem;
+    margin-top: -1rem; /* offset sticky nav */
+}
+
+/* Headings */
+h1 {
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #325578;
+}
+
+h2 {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;    
+} 
+
+
+p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+/* Navigation */
+header {
+    position: sticky;
+    top: 0;
+    background-color: #34495e;
+    padding: 1.5rem 0;
+    z-index: 1000;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #ecf0f1;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Tooltips */
+header nav ul li a[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    border-radius: 0.4rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+header nav ul li a[data-tooltip]:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+header nav ul li a:hover {
+    color: #e74c3c;
+}
+
+/* About Section */
+#about {
+    text-align: center;
+}
+
+#about p {
+    font-size: 1.125rem;
+    color: #7f8c8d;
+}
+
+/* Portfolio Section */
+#portfolio {
+    margin-top: 4rem;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.project-item {
+    background-color: #ecf0f1;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.project-item img {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+}
+
+.project-item h2 {
+    padding: 1.5rem;
+    background-color: #34495e;
+    color: #fff;
+    text-align: center;
+    flex-grow: 1;
+}
+
+/* Hover effect for portfolio items */
+.project-item:hover {
+    transform: translateY(-1rem);
+    box-shadow: 0 0.4rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+
+/* Modal (pure CSS) */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.8rem;
+    width: 90%;
+    max-width: 50rem;
+    box-shadow: 0 0.4rem 0.6rem rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.close-btn {
+    font-size: 2rem;
+    color: #333;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
+.modal h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+}
+
+.modal p {
+    font-size: 1.35rem;
+    color: #0f3235;
+}
+
+/* Show modal using :target */
+.modal:target {
+    display: flex;
+}
+
+/* Contact Section */
+#contact {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact label {
+    margin: 1rem 0 0.5rem;
+}
+
+#contact input,
+#contact textarea {
+    width: 100%;
+    max-width: 40rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid #ccc;
+}
+
+#contact button {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#contact button:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+/* Prevent nav overlap when scrolling to sections */
+#about, #portfolio, #contact {
+    scroll-margin-top: 6rem;
+}
+
+/* Footer */
+footer {
+    background-color: #34495e;
+    color: #ecf0f1;
+    padding: 2rem;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 4rem;
+}
+
+/* Responsive Typography & Layout */
+
+/* Mobile */
+@media (max-width: 48rem) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #contact input,
+    #contact textarea {
+        max-width: 100%;
+    }
+
+    #contact button {
+        width: 100%;
+    }
+}
+
+/* Tablet */
+@media (max-width: 64rem) {
+    h1 {
+        font-size: 2.25rem;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop */
+@media (min-width: 64.063rem) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

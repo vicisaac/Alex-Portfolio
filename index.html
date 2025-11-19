@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Header / Navigation -->
+<header>
+    <nav>
+        <ul>
+            <li><a href="#about" class="nav-link" data-tooltip="Learn more about me">About</a></li>
+            <li><a href="#portfolio" class="nav-link" data-tooltip="See my projects">Portfolio</a></li>
+            <li><a href="#contact" class="nav-link" data-tooltip="Get in touch">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- About Section -->
+<section id="about">
+    <h1>About Me</h1>
+    <h2>Hello! I am Alex Styles, a passionate developer who loves creating responsive and interactive web applications. I focus on modern design, usability, and clean code.</h2>
+</section>
+
+<!-- Portfolio Section -->
+<section id="portfolio">
+    <h1>Portfolio</h1>
+    <div class="portfolio-grid">
+
+        <!-- Project 1 -->
+        <a href="#project1-modal" class="project-item">
+            <img src="https://via.placeholder.com/400x200" alt="Project 1">
+            <h2>Project 1</h2>
+        </a>
+
+        <!-- Project 2 -->
+        <a href="#project2-modal" class="project-item">
+            <img src="https://via.placeholder.com/400x200" alt="Project 2">
+            <h2>Project 2</h2>
+        </a>
+
+        <!-- Project 3 -->
+        <a href="#project3-modal" class="project-item">
+            <img src="https://via.placeholder.com/400x200" alt="Project 3">
+            <h2>Project 3</h2>
+        </a>
+
+    </div>
+</section>
+
+<!-- CSS Modals -->
+<div id="project1-modal" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close-btn">&times;</a>
+        <h2>Project 1 Details</h2>
+        <p>This project demonstrates responsive web design and CSS-only modals without any JavaScript. It’s fully mobile-friendly and interactive.</p>
+    </div>
+</div>
+
+<div id="project2-modal" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close-btn">&times;</a>
+        <h2>Project 2 Details</h2>
+        <p>Project 2 focuses on modern CSS grid layouts and smooth hover effects. All elements scale using rem and percentages for responsiveness.</p>
+    </div>
+</div>
+
+<div id="project3-modal" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close-btn">&times;</a>
+        <h2>Project 3 Details</h2>
+        <p>This project emphasizes clean UI design, typography, and accessibility. No JavaScript is required, only HTML and CSS.</p>
+    </div>
+</div>
+
+<!-- Contact Section -->
+<section id="contact">
+    <h1>Contact Me</h1>
+    <form>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<!-- Footer -->
+<footer>
+    &copy; 2025 Alex Styles. All Rights Reserved.
+</footer>
+
+</body>
+</html>
